@@ -31,8 +31,8 @@ export default class TrieSearch<T> {
   reset() : void
   addFromObject(obj : any, valueField? : string) : void
   map(key : string, value : T) : void
-  get(phraseOrPhrases : string | string[], reducer? : TrieSearch.ReducerFn<T> | null, limit? : number) : T[]
-  search(phrases : string | string[], reducer? : TrieSearch.ReducerFn<T>, limit? : number) : T[]
+  get(phraseOrPhrases : string | string[], reducer? : TrieSearch.ReducerFn<T> | null, limit? : number) : (T & { $tsid: string })[]
+  search(phrases : string | string[], reducer? : TrieSearch.ReducerFn<T>, limit? : number) : (T & { $tsid: string })[]
 
   // Expected to be used internally only, but could be useful to someone someday
   keyToArr(key : string) : string[]
